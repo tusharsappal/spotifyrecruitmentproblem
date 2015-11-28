@@ -6,8 +6,6 @@ import org.sikuli.basics.Debug;
 import configs.Configs;
 import utils.RetrieveGUIObjectPatterns;;
 
-
-
 public class TestLoginScenarioWithValidCredentials {
 
 	public static void main(String[] args) throws FindFailed, InterruptedException, AWTException {
@@ -16,7 +14,7 @@ public class TestLoginScenarioWithValidCredentials {
 		Screen screen = new Screen();			
 		ImagePath.add(System.getProperty("user.dir")+Configs.IMAGE_PATH);
 		RetrieveGUIObjectPatterns guiPatterns = new RetrieveGUIObjectPatterns();	
-		App app = new App("Spotify");
+		App app = new App(Configs.APP_NAME);
 		app.focus();
 		Thread.sleep(5000);
 		screen.click(guiPatterns.getUserNamePattern());
