@@ -2,8 +2,8 @@ package utils;
 
 public class RetrieveUpdateLoginCredentials {
 	
-	private static String userName;
-	private static String passWord;
+	private static String userName = "sappal_tushar";
+	private static String passWord = "Accompany123";
 
 	public static String getUserName()
 	{
