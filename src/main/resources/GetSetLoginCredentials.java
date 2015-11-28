@@ -1,6 +1,5 @@
-import java.net.PasswordAuthentication;
-
 public class LoginCredentials {
+	
 	private String userName;
 	private String passWord;
 
@@ -22,4 +21,5 @@ public class LoginCredentials {
 	{
 		passWord = newPassWord;
 	}
+
 }

@@ -10,14 +10,13 @@ public class TestClass {
 		//Screen s = new Screen();
 		//s.find(s.userCapture().getFile()).highlight(2);
 		App app = new App("Spotify");
-        app.open();
-        Thread.sleep(20000);
+		app.open();
+		Thread.sleep(20000);
 		//app.openAndWait(5);
 		System.out.println(app.isRunning());
 		app.close();
-
-
 	}
+
 }
 
 
