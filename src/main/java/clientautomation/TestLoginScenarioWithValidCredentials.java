@@ -3,6 +3,9 @@ package clientautomation;
 import org.sikuli.script.*;
 import java.awt.AWTException;
 import org.sikuli.basics.Debug;
+import configs.Configs;
+
+
 
 public class TestLoginScenarioWithValidCredentials {
 
@@ -10,7 +13,7 @@ public class TestLoginScenarioWithValidCredentials {
 
 		Debug.setDebugLevel(3);
 		Screen screen = new Screen();
-		ImagePath.add(System.getProperty("user.dir")+"/src/main/resources/images");
+		ImagePath.add(System.getProperty("user.dir")+Configs.IMAGE_PATH);
 		Pattern userNamePattern = new Pattern("user_name_image.png").similar((float)0.7);
 		Pattern userPasswordPattern = new Pattern("user_password_image.png").similar((float)0.7);
 		Pattern loginButtonPattern = new Pattern("login_button.png").similar((float)0.7);
