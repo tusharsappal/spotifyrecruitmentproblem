@@ -14,7 +14,10 @@ public class TestClass {
 		//System.out.println("Path is"+ TestClass.class.getCanonicalName());
 		Pattern userNamePattern = new Pattern("user_name_image_2.png").similar((float)0.7);
 		Pattern userPasswordPattern = new Pattern("user_password_image.png").similar((float)0.7);
-		Pattern loginButtonPattern = new Pattern("login_button.png").similar((float)0.7);		
+		Pattern loginButtonPattern = new Pattern("login_button.png").similar((float)0.7);
+		Pattern userNameTopBanner =  new Pattern("user_name_top_banner.png");
+		Pattern userNameDropDown = new Pattern("user_name_drop_down.png");
+
 		App app = new App("Spotify");
 		app.focus();
 		Thread.sleep(5000);
@@ -32,6 +35,15 @@ public class TestClass {
 		screen.click(loginButtonPattern);
 
 		Thread.sleep(5000);
+
+		// First Checking if the user is logged in or not 
+
+		if(screen.exists(userNamePattern) != null)
+		{
+			screen.click(userNameDropDown);
+			//screen.wait()
+
+		}
 
 		// Adding the code to logout from the Client
 
