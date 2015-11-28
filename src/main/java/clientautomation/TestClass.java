@@ -13,15 +13,31 @@ public class TestClass {
 		ImagePath.add(System.getProperty("user.dir")+"/src/main/resources/images");
 		//System.out.println("Path is"+ TestClass.class.getCanonicalName());
 		Pattern userNamePattern = new Pattern("user_name_image_2.png").similar((float)0.7);
+		Pattern userPasswordPattern = new Pattern("user_password_image.png").similar((float)0.7);
+		Pattern loginButtonPattern = new Pattern("login_button.png").similar((float)0.7);		
 		App app = new App("Spotify");
 		app.focus();
 		Thread.sleep(5000);
 		screen.click(userNamePattern);
-		
+
 		// Now navigating to the password field
-		
-		Pattern userPasswordPattern = new Pattern("user_password_image.png").similar((float)0.7);
+
+
 		screen.type(userPasswordPattern,"Accompany123");
+
+		// Now we will be clicking on the Sign in Button
+
+
+
+		screen.click(loginButtonPattern);
+
+		Thread.sleep(5000);
+
+		// Adding the code to logout from the Client
+
+
+
+
 		System.out.println(app.isRunning());
 		Thread.sleep(2000);
 		app.close();
