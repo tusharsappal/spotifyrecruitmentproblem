@@ -33,24 +33,21 @@ public class TestSearchScenarios {
 		if (screen.exists(guiPatterns.getSearchBoxPattern())!= null)
 		{
 			screen.click(guiPatterns.getSearchBoxPattern());
-			screen.type(guiPatterns.getSearchBoxPattern(), "Bruno Mars");
+			screen.type(guiPatterns.getSearchBoxPattern(), Configs.ARTIST_NAME);
 
 			Thread.sleep(3000);
 
 			screen.click(guiPatterns.getArtistSearchThumbnailImagePattern());
 
 			Thread.sleep(3000);
-			
+
 			screen.click(guiPatterns.getUserNameDropDownPattern());
 			Thread.sleep(3000);
 			screen.click(guiPatterns.getLogoutButtonPattern());
 		}
 
-
-
-		//		System.out.println(app.isRunning());
-		//		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-		//		app.close();
+		System.out.println(app.isRunning());
+		app.close();
 	}
 
 
