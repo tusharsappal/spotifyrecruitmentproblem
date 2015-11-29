@@ -7,9 +7,10 @@ import configs.Configs;
 import utils.RetrieveGUIObjectPatterns;
 import utils.RetrieveUpdateLoginCredentials;
 
+
 public class TestLoginScenarioWithInValidCredentials {
 
-	public static void main(String[] args) throws FindFailed, InterruptedException, AWTException {
+	public static void testLoginScenarioWithInvalidCredentials() throws FindFailed, InterruptedException, AWTException {
 
 		Debug.setDebugLevel(3);
 		Screen screen = new Screen();			
