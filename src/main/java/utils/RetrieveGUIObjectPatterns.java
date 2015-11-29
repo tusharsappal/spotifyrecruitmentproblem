@@ -17,7 +17,8 @@ public class RetrieveGUIObjectPatterns {
 	private Pattern resetPasswordLoginScreenPattern = new Pattern("reset_password_login_screen.png").similar((float)0.7);
 	private Pattern settingsLoginScreenPattern = new Pattern("settings_option_login_screen.png").similar((float)0.7);
 	private Pattern searchBoxPattern = new Pattern("search_box.png").similar((float)0.7);
-
+    private Pattern brunoMarsSearchThumbnailPattern = new Pattern("bruno_mars_search_thumbnail_image.png").similar((float)0.7);
+	
 	public Pattern getUserNamePattern()
 	{
 		return userNamePattern;
@@ -81,6 +82,12 @@ public class RetrieveGUIObjectPatterns {
 	public Pattern getSearchBoxPattern()
 	{
 		return searchBoxPattern;
+	}
+	
+	public Pattern getArtistSearchThumbnailImagePattern()
+	{
+		// Here we are assuming that the artist we search for is Bruno Mars
+		return brunoMarsSearchThumbnailPattern;
 	}
 
 }

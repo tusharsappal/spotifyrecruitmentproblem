@@ -13,7 +13,7 @@ import utils.RetrieveGUIObjectPatterns;
 import utils.RetrieveUpdateLoginCredentials;
 
 public class TestSearchScenarios {
-	
+
 	public static void main(String[] args) throws FindFailed, InterruptedException, AWTException {
 
 		Debug.setDebugLevel(3);
@@ -29,20 +29,28 @@ public class TestSearchScenarios {
 		screen.click(guiPatterns.getLoginButtonPattern());
 
 		screen.wait(guiPatterns.getSearchBoxPattern());
-		
+
 		if (screen.exists(guiPatterns.getSearchBoxPattern())!= null)
 		{
 			screen.click(guiPatterns.getSearchBoxPattern());
 			screen.type(guiPatterns.getSearchBoxPattern(), "Bruno Mars");
-			
+
 			Thread.sleep(3000);
+
+			screen.click(guiPatterns.getArtistSearchThumbnailImagePattern());
+
+			Thread.sleep(3000);
+			
+			screen.click(guiPatterns.getUserNameDropDownPattern());
+			Thread.sleep(3000);
+			screen.click(guiPatterns.getLogoutButtonPattern());
 		}
 
-		
 
-//		System.out.println(app.isRunning());
-//		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-//		app.close();
+
+		//		System.out.println(app.isRunning());
+		//		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+		//		app.close();
 	}
 
 
