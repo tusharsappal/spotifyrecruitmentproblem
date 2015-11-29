@@ -16,6 +16,7 @@ public class RetrieveGUIObjectPatterns {
 	private Pattern signupOptionLoginScreenPattern = new Pattern("signup_option_login_screen.png").similar((float)0.7);
 	private Pattern resetPasswordLoginScreenPattern = new Pattern("reset_password_login_screen.png").similar((float)0.7);
 	private Pattern settingsLoginScreenPattern = new Pattern("settings_option_login_screen.png").similar((float)0.7);
+	private Pattern searchBoxPattern = new Pattern("search_box.png").similar((float)0.7);
 
 	public Pattern getUserNamePattern()
 	{
@@ -75,6 +76,11 @@ public class RetrieveGUIObjectPatterns {
 	public Pattern getSettingsLoginScreenPattern()
 	{
 		return settingsLoginScreenPattern;
+	}
+
+	public Pattern getSearchBoxPattern()
+	{
+		return searchBoxPattern;
 	}
 
 }

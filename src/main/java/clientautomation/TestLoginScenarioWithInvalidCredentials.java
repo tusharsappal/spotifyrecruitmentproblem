@@ -30,6 +30,8 @@ public class TestLoginScenarioWithInValidCredentials {
 		{
 			// We will be adding more tests here like checking for the presence of login button etc.
 			System.out.println("Test");
+
+			// Need to improve some portions of the test script
 		}
 
 		//     
@@ -45,9 +47,9 @@ public class TestLoginScenarioWithInValidCredentials {
 		//			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
 		//		}
 		//
-		//		System.out.println(app.isRunning());
-		//		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-		//		app.close();
+		System.out.println(app.isRunning());
+		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+		app.close();
 	}
 
 }
