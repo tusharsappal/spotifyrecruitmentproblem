@@ -6,6 +6,8 @@ import org.sikuli.basics.Debug;
 import configs.Configs;
 import utils.RetrieveGUIObjectPatterns;
 import utils.RetrieveUpdateLoginCredentials;
+
+import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -18,6 +20,7 @@ public class TestLoginScenarioWithValidCredentials {
 		Screen screen = new Screen();			
 		ImagePath.add(System.getProperty("user.dir")+Configs.IMAGE_PATH);
 		RetrieveGUIObjectPatterns guiPatterns = new RetrieveGUIObjectPatterns();
+		boolean isUserLoggedIn = false;
 		App app = new App(Configs.APP_NAME);
 		app.focus();
 		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
@@ -30,12 +33,21 @@ public class TestLoginScenarioWithValidCredentials {
 
 		if(screen.exists(guiPatterns.getUserNameTopBannerPattern()) != null)
 		{
+			isUserLoggedIn = true;
 			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
 			screen.click(guiPatterns.getUserNameDropDownPattern());
-			//screen.wait()
 			screen.wait(guiPatterns.getUserNameDropDownPattern());
 			screen.click(guiPatterns.getLogoutButtonPattern());
 			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+		}
+
+		if (isUserLoggedIn == true)
+		{
+			Assert.assertTrue(true);
+		}
+		else
+		{
+			Assert.assertTrue(false);
 		}
 
 		System.out.println(app.isRunning());

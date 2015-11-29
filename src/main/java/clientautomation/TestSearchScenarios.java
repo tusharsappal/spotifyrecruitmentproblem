@@ -2,6 +2,7 @@ package clientautomation;
 
 import java.awt.AWTException;
 
+import org.junit.Test;
 import org.sikuli.basics.Debug;
 import org.sikuli.script.App;
 import org.sikuli.script.FindFailed;
@@ -14,7 +15,8 @@ import utils.RetrieveUpdateLoginCredentials;
 
 public class TestSearchScenarios {
 
-	public static void main(String[] args) throws FindFailed, InterruptedException, AWTException {
+	@Test
+	public void testSearchScenarios() throws FindFailed, InterruptedException, AWTException {
 
 		Debug.setDebugLevel(Configs.DEBUG_LEVEL);
 		Screen screen = new Screen();			
