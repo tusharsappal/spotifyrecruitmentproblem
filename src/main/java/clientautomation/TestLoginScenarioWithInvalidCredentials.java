@@ -7,7 +7,7 @@ import configs.Configs;
 import utils.RetrieveGUIObjectPatterns;
 import utils.RetrieveUpdateLoginCredentials;
 
-public class TestLoginScenarioWithValidCredentials {
+public class TestLoginScenarioWithInvalidCredentials {
 
 	public static void main(String[] args) throws FindFailed, InterruptedException, AWTException {
 
@@ -19,25 +19,25 @@ public class TestLoginScenarioWithValidCredentials {
 		app.focus();
 		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
 		screen.click(guiPatterns.getUserNamePattern());
-		screen.type(guiPatterns.getPasswordPattern(),RetrieveUpdateLoginCredentials.getInvalidPassword());
+		screen.type(guiPatterns.getPasswordPattern(),RetrieveUpdateLoginCredentials.getPassWord());
 
 		screen.click(guiPatterns.getLoginButtonPattern());
-//
-//		screen.wait(guiPatterns.getUserNameTopBannerPattern());
-//
-//		if(screen.exists(guiPatterns.getUserNameTopBannerPattern()) != null)
-//		{
-//			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-//			screen.click(guiPatterns.getUserNameDropDownPattern());
-//			//screen.wait()
-//			screen.wait(guiPatterns.getUserNameDropDownPattern());
-//			screen.click(guiPatterns.getLogoutButtonPattern());
-//			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-//		}
-//
-//		System.out.println(app.isRunning());
-//		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-//		app.close();
+
+		screen.wait(guiPatterns.getUserNameTopBannerPattern());
+
+		if(screen.exists(guiPatterns.getUserNameTopBannerPattern()) != null)
+		{
+			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+			screen.click(guiPatterns.getUserNameDropDownPattern());
+			//screen.wait()
+			screen.wait(guiPatterns.getUserNameDropDownPattern());
+			screen.click(guiPatterns.getLogoutButtonPattern());
+			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+		}
+
+		System.out.println(app.isRunning());
+		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+		app.close();
 	}
 
 }
