@@ -23,31 +23,31 @@ public class TestLoginScenarioWithInValidCredentials {
 
 		screen.click(guiPatterns.getLoginButtonPattern());
 		Thread.sleep(3000);
-		
+
 		screen.wait(guiPatterns.getInvalidCredentialsErrorPattern());
-		
+
 		if(screen.exists(guiPatterns.getInvalidCredentialsErrorPattern()) != null)
 		{
 			// We will be adding more tests here like checking for the presence of login button etc.
 			System.out.println("Test");
 		}
-		
-//     
-//		screen.wait(guiPatterns.getUserNameTopBannerPattern());
-//
-//		if(screen.exists(guiPatterns.getUserNameTopBannerPattern()) != null)
-//		{
-//			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-//			screen.click(guiPatterns.getUserNameDropDownPattern());
-//			//screen.wait()
-//			screen.wait(guiPatterns.getUserNameDropDownPattern());
-//			screen.click(guiPatterns.getLogoutButtonPattern());
-//			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-//		}
-//
-//		System.out.println(app.isRunning());
-//		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-//		app.close();
+
+		//     
+		//		screen.wait(guiPatterns.getUserNameTopBannerPattern());
+		//
+		//		if(screen.exists(guiPatterns.getUserNameTopBannerPattern()) != null)
+		//		{
+		//			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+		//			screen.click(guiPatterns.getUserNameDropDownPattern());
+		//			//screen.wait()
+		//			screen.wait(guiPatterns.getUserNameDropDownPattern());
+		//			screen.click(guiPatterns.getLogoutButtonPattern());
+		//			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+		//		}
+		//
+		//		System.out.println(app.isRunning());
+		//		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+		//		app.close();
 	}
 
 }
