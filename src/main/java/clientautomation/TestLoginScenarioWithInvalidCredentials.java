@@ -12,7 +12,7 @@ public class TestLoginScenarioWithInValidCredentials {
 
 	public static void testLoginScenarioWithInvalidCredentials() throws FindFailed, InterruptedException, AWTException {
 
-		Debug.setDebugLevel(3);
+		Debug.setDebugLevel(Configs.DEBUG_LEVEL);
 		Screen screen = new Screen();			
 		ImagePath.add(System.getProperty("user.dir")+Configs.IMAGE_PATH);
 		RetrieveGUIObjectPatterns guiPatterns = new RetrieveGUIObjectPatterns();
@@ -31,23 +31,9 @@ public class TestLoginScenarioWithInValidCredentials {
 		{
 			// We will be adding more tests here like checking for the presence of login button etc.
 			System.out.println("Test");
-
 			// Need to improve some portions of the test script
 		}
 
-		//     
-		//		screen.wait(guiPatterns.getUserNameTopBannerPattern());
-		//
-		//		if(screen.exists(guiPatterns.getUserNameTopBannerPattern()) != null)
-		//		{
-		//			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-		//			screen.click(guiPatterns.getUserNameDropDownPattern());
-		//			//screen.wait()
-		//			screen.wait(guiPatterns.getUserNameDropDownPattern());
-		//			screen.click(guiPatterns.getLogoutButtonPattern());
-		//			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-		//		}
-		//
 		System.out.println(app.isRunning());
 		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
 		app.close();

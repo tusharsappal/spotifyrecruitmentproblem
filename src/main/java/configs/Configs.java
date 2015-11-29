@@ -6,5 +6,6 @@ public class Configs {
 	public static final String APP_NAME = "Spotify";
 	public static final int DEFAULT_SLEEP_VALUE = 3000;
 	public static final String ARTIST_NAME = "BRUNO MARS";
+	public static final int DEBUG_LEVEL = 3;
 
 }

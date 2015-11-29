@@ -16,7 +16,7 @@ public class TestSearchScenarios {
 
 	public static void main(String[] args) throws FindFailed, InterruptedException, AWTException {
 
-		Debug.setDebugLevel(3);
+		Debug.setDebugLevel(Configs.DEBUG_LEVEL);
 		Screen screen = new Screen();			
 		ImagePath.add(System.getProperty("user.dir")+Configs.IMAGE_PATH);
 		RetrieveGUIObjectPatterns guiPatterns = new RetrieveGUIObjectPatterns();
