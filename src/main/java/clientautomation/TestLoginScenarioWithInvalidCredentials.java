@@ -2,15 +2,17 @@ package clientautomation;
 
 import org.sikuli.script.*;
 import java.awt.AWTException;
+
+import org.junit.Test;
 import org.sikuli.basics.Debug;
 import configs.Configs;
 import utils.RetrieveGUIObjectPatterns;
 import utils.RetrieveUpdateLoginCredentials;
 
-
 public class TestLoginScenarioWithInValidCredentials {
 
-	public static void testLoginScenarioWithInvalidCredentials() throws FindFailed, InterruptedException, AWTException {
+	@Test
+	public void testLoginScenarioWithInvalidCredentials() throws FindFailed, InterruptedException, AWTException {
 
 		Debug.setDebugLevel(Configs.DEBUG_LEVEL);
 		Screen screen = new Screen();			
