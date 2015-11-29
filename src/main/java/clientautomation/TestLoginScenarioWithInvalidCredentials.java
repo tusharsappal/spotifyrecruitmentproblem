@@ -7,7 +7,7 @@ import configs.Configs;
 import utils.RetrieveGUIObjectPatterns;
 import utils.RetrieveUpdateLoginCredentials;
 
-public class TestLoginScenarioWithInvalidCredentials {
+public class TestLoginScenarioWithInValidCredentials {
 
 	public static void main(String[] args) throws FindFailed, InterruptedException, AWTException {
 
@@ -19,25 +19,35 @@ public class TestLoginScenarioWithInvalidCredentials {
 		app.focus();
 		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
 		screen.click(guiPatterns.getUserNamePattern());
-		screen.type(guiPatterns.getPasswordPattern(),RetrieveUpdateLoginCredentials.getPassWord());
+		screen.type(guiPatterns.getPasswordPattern(),RetrieveUpdateLoginCredentials.getInvalidPassword());
 
 		screen.click(guiPatterns.getLoginButtonPattern());
-
-		screen.wait(guiPatterns.getUserNameTopBannerPattern());
-
-		if(screen.exists(guiPatterns.getUserNameTopBannerPattern()) != null)
+		Thread.sleep(3000);
+		
+		screen.wait(guiPatterns.getInvalidCredentialsErrorPattern());
+		
+		if(screen.exists(guiPatterns.getInvalidCredentialsErrorPattern()) != null)
 		{
-			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-			screen.click(guiPatterns.getUserNameDropDownPattern());
-			//screen.wait()
-			screen.wait(guiPatterns.getUserNameDropDownPattern());
-			screen.click(guiPatterns.getLogoutButtonPattern());
-			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+			// We will be adding more tests here like checking for the presence of login button etc.
+			System.out.println("Test");
 		}
-
-		System.out.println(app.isRunning());
-		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-		app.close();
+		
+//     
+//		screen.wait(guiPatterns.getUserNameTopBannerPattern());
+//
+//		if(screen.exists(guiPatterns.getUserNameTopBannerPattern()) != null)
+//		{
+//			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+//			screen.click(guiPatterns.getUserNameDropDownPattern());
+//			//screen.wait()
+//			screen.wait(guiPatterns.getUserNameDropDownPattern());
+//			screen.click(guiPatterns.getLogoutButtonPattern());
+//			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+//		}
+//
+//		System.out.println(app.isRunning());
+//		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+//		app.close();
 	}
 
 }
