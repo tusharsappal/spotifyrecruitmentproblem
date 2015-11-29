@@ -3,6 +3,7 @@ package clientautomation;
 import org.sikuli.script.*;
 import java.awt.AWTException;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.sikuli.basics.Debug;
 import configs.Configs;
@@ -32,7 +33,15 @@ public class TestLoginScenarioWithInValidCredentials {
 		if(screen.exists(guiPatterns.getInvalidCredentialsErrorPattern()) != null)
 		{
 			// We will be adding more tests here like checking for the presence of login button etc.
-			System.out.println("Test");
+			if ((screen.exists(guiPatterns.getLoginWithFacebookPattern())!= null) &&
+					(screen.exists(guiPatterns.getSignUpOptionLoginScreenPattern())!= null))
+			{
+				Assert.assertTrue(true);
+			}
+			else
+			{
+				Assert.assertTrue(false);
+			}
 			// Need to improve some portions of the test script
 		}
 
