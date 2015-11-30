@@ -19,8 +19,9 @@ public class RetrieveGUIObjectPatterns {
 	private Pattern searchBoxPattern = new Pattern("search_box.png").similar((float)0.7);
 	private Pattern brunoMarsSearchThumbnailPattern = new Pattern("bruno_mars_search_thumbnail_image.png").similar((float)0.7);
 	private Pattern artistLevelPlayButtonPattern = new Pattern("artist_play_button.png").similar((float)0.7);
-    private Pattern activePlayButtonPattern = new Pattern("active_play_button.png").similar((float)0.7);
-	
+	private Pattern activePlayButtonPattern = new Pattern("active_play_button.png").similar((float)0.7);
+	private Pattern brunoMarsLargeImagePattern = new Pattern("bruno_mars_large_image.png").similar((float)0.7);
+
 	public Pattern getUserNamePattern()
 	{
 		return userNamePattern;
@@ -96,10 +97,15 @@ public class RetrieveGUIObjectPatterns {
 	{
 		return artistLevelPlayButtonPattern;
 	}
-	
+
 	public Pattern getActivePlayButtonPattern()
 	{
 		return activePlayButtonPattern;
+	}
+
+	public Pattern getBrunoMarsLargeImagePattern()
+	{
+		return brunoMarsLargeImagePattern;
 	}
 
 }

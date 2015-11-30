@@ -27,22 +27,19 @@ public class TestSearchScenarios {
 		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
 		screen.click(guiPatterns.getUserNamePattern());
 		screen.type(guiPatterns.getPasswordPattern(),RetrieveUpdateLoginCredentials.getPassWord());
-
 		screen.click(guiPatterns.getLoginButtonPattern());
-
 		screen.wait(guiPatterns.getSearchBoxPattern());
 
 		if (screen.exists(guiPatterns.getSearchBoxPattern())!= null)
 		{
 			screen.click(guiPatterns.getSearchBoxPattern());
 			screen.type(guiPatterns.getSearchBoxPattern(), Configs.ARTIST_NAME);
-
-			Thread.sleep(3000);
-
+			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
 			screen.click(guiPatterns.getArtistSearchThumbnailImagePattern());
-
-			Thread.sleep(3000);
-
+			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+			// This clicks on the latest song from Bruno Mars and plays it
+			screen.click(guiPatterns.getBrunoMarsLargeImagePattern());
+			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
 			screen.click(guiPatterns.getUserNameDropDownPattern());
 			Thread.sleep(3000);
 			screen.click(guiPatterns.getLogoutButtonPattern());
@@ -51,6 +48,5 @@ public class TestSearchScenarios {
 		System.out.println(app.isRunning());
 		app.close();
 	}
-
 
 }
