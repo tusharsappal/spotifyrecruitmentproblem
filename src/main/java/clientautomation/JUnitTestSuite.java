@@ -7,7 +7,6 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
 	TestLoginScenarioWithInValidCredentials.class,
 	TestLoginScenarioWithValidCredentials.class,
-	TestSearchScenarios.class
 })
 
 public class JUnitTestSuite {
