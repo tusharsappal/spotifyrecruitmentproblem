@@ -29,10 +29,18 @@ public class TestNewPlaylistCreationAndDeletion {
 		screen.click(guiPatterns.getLoginButtonPattern());
 		screen.wait(guiPatterns.getSearchBoxPattern());
 
-		// Now we will check for the presence of the New Playlist Creation Button 
-		// and will try to create a new playlist
-		
-		System.out.println(app.isRunning());
+		screen.mouseMove(guiPatterns.getNewPlayListCreationButtonPattern());
+		screen.click(guiPatterns.getNewPlayListCreationButtonPattern());
+		Thread.sleep(3000);
+		screen.mouseMove(guiPatterns.getNewPlaylistDefaultTextBoxPattern());
+		screen.click(guiPatterns.getNewPlaylistDefaultTextBoxPattern());
+		Thread.sleep(3000);
+		screen.type(guiPatterns.getNewPlayListCreationButtonPattern(), Configs.TEST_PLAYLIST_NAME);
+		Thread.sleep(3000);
+
+		screen.click(guiPatterns.getUserNameDropDownPattern());
+		Thread.sleep(3000);
+		screen.click(guiPatterns.getLogoutButtonPattern());
 		app.close();
 
 	}

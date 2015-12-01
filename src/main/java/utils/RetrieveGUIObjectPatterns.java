@@ -21,10 +21,11 @@ public class RetrieveGUIObjectPatterns {
 	private Pattern activePlayButtonPattern = new Pattern("active_play_button.png").similar((float)0.7);
 	private Pattern activePauseButton = new Pattern("active_pause_button.png").similar((float)0.7);
 	private Pattern whenIWasYourManTopResultsInList = new Pattern("when_i_was_your_man_top_results_in_list.png").similar((float)0.7);
-	//private Pattern popChillOutThumbnailImage = new Pattern("trending_thumbnail_image.png").similar((float)0.7);
 	private Pattern getGenresAndMoodsPattern = new Pattern("genres_and_mood.png").similar((float)0.7);
 	private Pattern trendingSongsThumbNailPattern = new Pattern("trending_songs_thumbnail_image.png").similar((float)0.7);
 	private Pattern viralSongsThumbNailPattern = new Pattern("viral_hits_thumbnail_image.png").similar((float)0.7);
+	private Pattern newPlayListCreationPattern = new Pattern("new_playlist_creation_button.png").similar((float)0.7);
+	private Pattern newPlayListDefaultTextBox = new Pattern("new_playlist_default_textbox.png").similar((float)0.7);
 
 	public Pattern getUserNamePattern()
 	{
@@ -120,9 +121,20 @@ public class RetrieveGUIObjectPatterns {
 	{
 		return trendingSongsThumbNailPattern;
 	}
-	
+
 	public Pattern getViralHitsThumbNailPattern()
 	{
 		return viralSongsThumbNailPattern;
 	}
+
+	public Pattern getNewPlayListCreationButtonPattern()
+	{
+		return newPlayListCreationPattern;
+	}
+
+	public Pattern getNewPlaylistDefaultTextBoxPattern()
+	{
+		return newPlayListDefaultTextBox;
+	}
+
 }
