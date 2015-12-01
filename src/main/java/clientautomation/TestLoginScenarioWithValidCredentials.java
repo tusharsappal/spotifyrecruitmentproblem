@@ -27,16 +27,13 @@ public class TestLoginScenarioWithValidCredentials {
 
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		userSession.loginUsingValidCredentials();
-
 		screen.wait(guiPatterns.getUserNameTopBannerPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 
 		if(screen.exists(guiPatterns.getUserNameTopBannerPattern()) != null)
 		{
 			isUserLoggedIn = true;
 			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
-			screen.click(guiPatterns.getUserNameDropDownPattern());
-			screen.wait(guiPatterns.getUserNameDropDownPattern());
-			screen.click(guiPatterns.getLogoutButtonPattern());
+			userSession.logOut();
 			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		}
 
