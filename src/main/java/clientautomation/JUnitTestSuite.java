@@ -8,6 +8,7 @@ import org.junit.runners.Suite;
 	TestLoginScenarioWithInValidCredentials.class,
 	TestLoginScenarioWithValidCredentials.class,
 	TestSearchScenarios.class
+	
 })
 
 public class JUnitTestSuite {

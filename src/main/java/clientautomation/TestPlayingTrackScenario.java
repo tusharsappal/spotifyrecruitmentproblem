@@ -1,7 +1,6 @@
 package clientautomation;
 
 import java.awt.AWTException;
-
 import org.junit.Test;
 import org.sikuli.basics.Debug;
 import org.sikuli.script.App;
@@ -12,6 +11,7 @@ import org.sikuli.script.Screen;
 import configs.Configs;
 import utils.RetrieveGUIObjectPatterns;
 import utils.RetrieveUpdateLoginCredentials;
+
 
 public class TestPlayingTrackScenario {
 
@@ -30,18 +30,35 @@ public class TestPlayingTrackScenario {
 		screen.click(guiPatterns.getLoginButtonPattern());
 		screen.wait(guiPatterns.getSearchBoxPattern());
 		Thread.sleep(3000);
-
-		screen.click(guiPatterns.getPopChillOutThumbNailImagePattern());
-		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-		//screen.click(guiPatterns.getTrendingThumbnailImagePattern());
-		//screen.click(guiPatterns.getViralHitsThumbnailPattern());
-
-
-		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+		screen.mouseMove(guiPatterns.getGenresAndMoodsPattern());
+		screen.click(guiPatterns.getGenresAndMoodsPattern());
+		Thread.sleep(3000);
+		screen.mouseMove(guiPatterns.getTrendingSongsThumbNailPattern());
+		screen.click(guiPatterns.getTrendingSongsThumbNailPattern());
+		Thread.sleep(3000);
 		screen.click(guiPatterns.getUserNameDropDownPattern());
 		Thread.sleep(3000);
 		screen.click(guiPatterns.getLogoutButtonPattern());
 
+		//
+		//		screen.click(guiPatterns.getPopChillOutThumbNailImagePattern());
+		//		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+		//
+		//		if(screen.exists(guiPatterns.getActivePlayButtonPattern())!=null)
+		//		{
+		//			Assert.assertTrue(true);
+		//		}
+		//		else
+		//		{
+		//			Assert.assertTrue(false);
+		//		}
+		//
+		//		//screen.click(guiPatterns.getTrendingThumbnailImagePattern());
+		//		//screen.click(guiPatterns.getViralHitsThumbnailPattern());
+		//		screen.click(guiPatterns.getUserNameDropDownPattern());
+		//		Thread.sleep(3000);
+		//		screen.click(guiPatterns.getLogoutButtonPattern());
+		//
 
 		System.out.println(app.isRunning());
 		app.close();
