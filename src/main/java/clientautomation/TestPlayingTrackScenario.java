@@ -9,6 +9,7 @@ import org.sikuli.script.ImagePath;
 import org.sikuli.script.Screen;
 
 import configs.Configs;
+import junit.framework.Assert;
 import utils.RetrieveGUIObjectPatterns;
 import utils.RetrieveUpdateLoginCredentials;
 
@@ -40,12 +41,20 @@ public class TestPlayingTrackScenario {
 		screen.mouseMove(guiPatterns.getViralHitsThumbNailPattern());
 		screen.click(guiPatterns.getViralHitsThumbNailPattern());
 		Thread.sleep(3000);
+		
+		if (screen.exists(guiPatterns.getActivePlayButtonPattern())!= null)
+		{
+			Assert.assertTrue(true);
+		}
+		else
+		{
+			Assert.assertTrue(false);
+		}
+		
 		screen.click(guiPatterns.getUserNameDropDownPattern());
 		Thread.sleep(3000);
 		screen.click(guiPatterns.getLogoutButtonPattern());
 
-
-		System.out.println(app.isRunning());
 		app.close();
 	}
 
