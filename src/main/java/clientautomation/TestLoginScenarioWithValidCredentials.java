@@ -38,15 +38,10 @@ public class TestLoginScenarioWithValidCredentials {
 		}
 
 		if (isUserLoggedIn == true)
-		{
 			Assert.assertTrue(true);
-		}
 		else
-		{
 			Assert.assertTrue(false);
-		}
 
-		System.out.println(app.isRunning());
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		app.close();
 	}
