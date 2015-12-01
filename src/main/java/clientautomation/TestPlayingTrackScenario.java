@@ -29,24 +29,19 @@ public class TestPlayingTrackScenario {
 		screen.type(guiPatterns.getPasswordPattern(),RetrieveUpdateLoginCredentials.getPassWord());
 		screen.click(guiPatterns.getLoginButtonPattern());
 		screen.wait(guiPatterns.getSearchBoxPattern());
+		Thread.sleep(3000);
 
-		if (screen.exists(guiPatterns.getSearchBoxPattern())!= null)
-		{
-			screen.click(guiPatterns.getSearchBoxPattern());
-			screen.type(guiPatterns.getSearchBoxPattern(), Configs.ARTIST_NAME);
-			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-			screen.click(guiPatterns.getArtistSearchThumbnailImagePattern());
-			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-			// This clicks on the latest song from Bruno Mars and plays it
-			screen.click(guiPatterns.getBrunoMarsLargeImagePattern());
-			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-			// We will now be checking for the Play Track bar is enabled or not
-			screen.exists(guiPatterns.getWhenIWasYourManTrackPlayEnabledPattern());
-			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-			screen.click(guiPatterns.getUserNameDropDownPattern());
-			Thread.sleep(3000);
-			screen.click(guiPatterns.getLogoutButtonPattern());
-		}
+		screen.click(guiPatterns.getPopChillOutThumbNailImagePattern());
+		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+		//screen.click(guiPatterns.getTrendingThumbnailImagePattern());
+		//screen.click(guiPatterns.getViralHitsThumbnailPattern());
+
+
+		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+		screen.click(guiPatterns.getUserNameDropDownPattern());
+		Thread.sleep(3000);
+		screen.click(guiPatterns.getLogoutButtonPattern());
+
 
 		System.out.println(app.isRunning());
 		app.close();

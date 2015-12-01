@@ -17,11 +17,11 @@ public class RetrieveGUIObjectPatterns {
 	private Pattern resetPasswordLoginScreenPattern = new Pattern("reset_password_login_screen.png").similar((float)0.7);
 	private Pattern settingsLoginScreenPattern = new Pattern("settings_option_login_screen.png").similar((float)0.7);
 	private Pattern searchBoxPattern = new Pattern("search_box.png").similar((float)0.7);
-	private Pattern brunoMarsSearchThumbnailPattern = new Pattern("bruno_mars_search_thumbnail_image.png").similar((float)0.7);
 	private Pattern artistLevelPlayButtonPattern = new Pattern("artist_play_button.png").similar((float)0.7);
 	private Pattern activePlayButtonPattern = new Pattern("active_play_button.png").similar((float)0.7);
-	private Pattern brunoMarsLargeImagePattern = new Pattern("bruno_mars_large_image.png").similar((float)0.7);
-    private Pattern whenIWasYourManTrackPlayEnabled = new Pattern("when_i_was_your_man_play_enabled.png").similar((float)0.7);
+	private Pattern whenIWasYourManTopResultsInList = new Pattern("when_i_was_your_man_top_results_in_list.png").similar((float)0.7);
+	private Pattern popChillOutThumbnailImage = new Pattern("trending_thumbnail_image.png").similar((float)0.7);
+    private Pattern getGenresAndMoodsPattern = new Pattern("genres_and_mood.png").similar((float)0.7);
 	
 	public Pattern getUserNamePattern()
 	{
@@ -88,12 +88,6 @@ public class RetrieveGUIObjectPatterns {
 		return searchBoxPattern;
 	}
 
-	public Pattern getArtistSearchThumbnailImagePattern()
-	{
-		// Here we are assuming that the artist we search for is Bruno Mars
-		return brunoMarsSearchThumbnailPattern;
-	}
-
 	public Pattern getArtistLevelPlayButtonPattern()
 	{
 		return artistLevelPlayButtonPattern;
@@ -104,14 +98,19 @@ public class RetrieveGUIObjectPatterns {
 		return activePlayButtonPattern;
 	}
 
-	public Pattern getBrunoMarsLargeImagePattern()
+	public Pattern getWhenIWasYourManSongTopResultsInList()
 	{
-		return brunoMarsLargeImagePattern;
+		return whenIWasYourManTopResultsInList;
+	}
+
+	public Pattern getPopChillOutThumbNailImagePattern()
+	{
+		return popChillOutThumbnailImage;
 	}
 	
-	public Pattern getWhenIWasYourManTrackPlayEnabledPattern()
+	public Pattern getGenresAndMoodsPattern()
 	{
-		return whenIWasYourManTrackPlayEnabled;
+		return getGenresAndMoodsPattern;
 	}
 
 }

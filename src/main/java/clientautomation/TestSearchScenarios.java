@@ -2,6 +2,7 @@ package clientautomation;
 
 import java.awt.AWTException;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.sikuli.basics.Debug;
 import org.sikuli.script.App;
@@ -33,12 +34,20 @@ public class TestSearchScenarios {
 		if (screen.exists(guiPatterns.getSearchBoxPattern())!= null)
 		{
 			screen.click(guiPatterns.getSearchBoxPattern());
-			screen.type(guiPatterns.getSearchBoxPattern(), Configs.ARTIST_NAME);
+			screen.type(guiPatterns.getSearchBoxPattern(), Configs.ARTIST_SONG_NAME);
 			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-			screen.click(guiPatterns.getArtistSearchThumbnailImagePattern());
-			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-			// This clicks on the latest song from Bruno Mars and plays it
-			screen.click(guiPatterns.getBrunoMarsLargeImagePattern());
+			if(screen.exists(guiPatterns.getWhenIWasYourManSongTopResultsInList())!= null)
+			{
+				Assert.assertTrue(true);
+			}
+			
+			else
+			{
+				Assert.assertTrue(false);
+			}
+			
+			// Now we will try to click on the song to play it .
+			
 			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
 			screen.click(guiPatterns.getUserNameDropDownPattern());
 			Thread.sleep(3000);
