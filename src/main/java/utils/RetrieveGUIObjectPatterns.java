@@ -23,8 +23,9 @@ public class RetrieveGUIObjectPatterns {
 	private Pattern whenIWasYourManTopResultsInList = new Pattern("when_i_was_your_man_top_results_in_list.png").similar((float)0.7);
 	//private Pattern popChillOutThumbnailImage = new Pattern("trending_thumbnail_image.png").similar((float)0.7);
 	private Pattern getGenresAndMoodsPattern = new Pattern("genres_and_mood.png").similar((float)0.7);
-    private Pattern trendingSongsThumbNailPattern = new Pattern("trending_songs_thumbnail_image.png").similar((float)0.7);
-	
+	private Pattern trendingSongsThumbNailPattern = new Pattern("trending_songs_thumbnail_image.png").similar((float)0.7);
+	private Pattern viralSongsThumbNailPattern = new Pattern("viral_hits_thumbnail_image.png").similar((float)0.7);
+
 	public Pattern getUserNamePattern()
 	{
 		return userNamePattern;
@@ -109,14 +110,19 @@ public class RetrieveGUIObjectPatterns {
 	{
 		return whenIWasYourManTopResultsInList;
 	}
-	
+
 	public Pattern getGenresAndMoodsPattern()
 	{
 		return getGenresAndMoodsPattern;
 	}
-	
+
 	public Pattern getTrendingSongsThumbNailPattern()
 	{
 		return trendingSongsThumbNailPattern;
+	}
+	
+	public Pattern getViralHitsThumbNailPattern()
+	{
+		return viralSongsThumbNailPattern;
 	}
 }

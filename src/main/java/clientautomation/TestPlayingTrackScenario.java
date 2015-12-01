@@ -36,29 +36,14 @@ public class TestPlayingTrackScenario {
 		screen.mouseMove(guiPatterns.getTrendingSongsThumbNailPattern());
 		screen.click(guiPatterns.getTrendingSongsThumbNailPattern());
 		Thread.sleep(3000);
+
+		screen.mouseMove(guiPatterns.getViralHitsThumbNailPattern());
+		screen.click(guiPatterns.getViralHitsThumbNailPattern());
+		Thread.sleep(3000);
 		screen.click(guiPatterns.getUserNameDropDownPattern());
 		Thread.sleep(3000);
 		screen.click(guiPatterns.getLogoutButtonPattern());
 
-		//
-		//		screen.click(guiPatterns.getPopChillOutThumbNailImagePattern());
-		//		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-		//
-		//		if(screen.exists(guiPatterns.getActivePlayButtonPattern())!=null)
-		//		{
-		//			Assert.assertTrue(true);
-		//		}
-		//		else
-		//		{
-		//			Assert.assertTrue(false);
-		//		}
-		//
-		//		//screen.click(guiPatterns.getTrendingThumbnailImagePattern());
-		//		//screen.click(guiPatterns.getViralHitsThumbnailPattern());
-		//		screen.click(guiPatterns.getUserNameDropDownPattern());
-		//		Thread.sleep(3000);
-		//		screen.click(guiPatterns.getLogoutButtonPattern());
-		//
 
 		System.out.println(app.isRunning());
 		app.close();
