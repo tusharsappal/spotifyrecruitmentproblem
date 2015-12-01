@@ -25,7 +25,7 @@ public class TestPlayingTrackScenario {
 		RetrieveGUIObjectPatterns guiPatterns = new RetrieveGUIObjectPatterns();
 		App app = new App(Configs.APP_NAME);
 		app.focus();
-		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		screen.click(guiPatterns.getUserNamePattern());
 		screen.type(guiPatterns.getPasswordPattern(),RetrieveUpdateLoginCredentials.getPassWord());
 		screen.click(guiPatterns.getLoginButtonPattern());

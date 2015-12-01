@@ -25,7 +25,7 @@ public class TestSearchScenarios {
 		RetrieveGUIObjectPatterns guiPatterns = new RetrieveGUIObjectPatterns();
 		App app = new App(Configs.APP_NAME);
 		app.focus();
-		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		screen.click(guiPatterns.getUserNamePattern());
 		screen.type(guiPatterns.getPasswordPattern(),RetrieveUpdateLoginCredentials.getPassWord());
 		screen.click(guiPatterns.getLoginButtonPattern());
@@ -35,7 +35,7 @@ public class TestSearchScenarios {
 		{
 			screen.click(guiPatterns.getSearchBoxPattern());
 			screen.type(guiPatterns.getSearchBoxPattern(), Configs.ARTIST_SONG_NAME);
-			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 			if(screen.exists(guiPatterns.getWhenIWasYourManSongTopResultsInList())!= null)
 			{
 				Assert.assertTrue(true);
@@ -48,7 +48,7 @@ public class TestSearchScenarios {
 			
 			// Now we will try to click on the song to play it .
 			
-			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 			screen.click(guiPatterns.getUserNameDropDownPattern());
 			Thread.sleep(3000);
 			screen.click(guiPatterns.getLogoutButtonPattern());

@@ -6,6 +6,7 @@ import org.sikuli.basics.Debug;
 import configs.Configs;
 import utils.RetrieveGUIObjectPatterns;
 import utils.RetrieveUpdateLoginCredentials;
+import utils.UserSession;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -19,25 +20,24 @@ public class TestLoginScenarioWithValidCredentials {
 		Screen screen = new Screen();			
 		ImagePath.add(System.getProperty("user.dir")+Configs.IMAGE_PATH);
 		RetrieveGUIObjectPatterns guiPatterns = new RetrieveGUIObjectPatterns();
+		UserSession userSession = new UserSession();
 		boolean isUserLoggedIn = false;
 		App app = new App(Configs.APP_NAME);
 		app.focus();
-		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
-		screen.click(guiPatterns.getUserNamePattern());
-		screen.type(guiPatterns.getPasswordPattern(),RetrieveUpdateLoginCredentials.getPassWord());
 
-		screen.click(guiPatterns.getLoginButtonPattern());
+		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
+		userSession.loginUsingValidCredentials();
 
-		screen.wait(guiPatterns.getUserNameTopBannerPattern());
+		screen.wait(guiPatterns.getUserNameTopBannerPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 
 		if(screen.exists(guiPatterns.getUserNameTopBannerPattern()) != null)
 		{
 			isUserLoggedIn = true;
-			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 			screen.click(guiPatterns.getUserNameDropDownPattern());
 			screen.wait(guiPatterns.getUserNameDropDownPattern());
 			screen.click(guiPatterns.getLogoutButtonPattern());
-			Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		}
 
 		if (isUserLoggedIn == true)
@@ -50,7 +50,7 @@ public class TestLoginScenarioWithValidCredentials {
 		}
 
 		System.out.println(app.isRunning());
-		Thread.sleep(Configs.DEFAULT_SLEEP_VALUE);
+		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		app.close();
 	}
 
