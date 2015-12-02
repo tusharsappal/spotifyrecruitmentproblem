@@ -9,13 +9,11 @@ import org.sikuli.script.Screen;
 
 import configs.Configs;
 import utils.RetrieveGUIObjectPatterns;
-import utils.RetrieveUpdateLoginCredentials;
 import utils.UserSession;
 
 public class TestNewPlaylistCreationAndDeletion {
 
 	@Test
-
 	public void testNewPlayListCreationDeletion() throws InterruptedException, FindFailed
 	{
 		Debug.setDebugLevel(Configs.DEBUG_LEVEL);
@@ -24,15 +22,11 @@ public class TestNewPlaylistCreationAndDeletion {
 		RetrieveGUIObjectPatterns guiPatterns = new RetrieveGUIObjectPatterns();
 		App app = new App(Configs.APP_NAME);
 		UserSession userSession = new UserSession();
-		
+
 		app.focus();
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		screen.click(guiPatterns.getUserNamePattern());
 		userSession.loginUsingValidCredentials();
-		
-		//screen.type(guiPatterns.getPasswordPattern(),RetrieveUpdateLoginCredentials.getPassWord());
-		//screen.click(guiPatterns.getLoginButtonPattern());
-		
 		screen.wait(guiPatterns.getSearchBoxPattern());
 
 		screen.mouseMove(guiPatterns.getNewPlayListCreationButtonPattern());
@@ -44,9 +38,7 @@ public class TestNewPlaylistCreationAndDeletion {
 		screen.type(guiPatterns.getNewPlayListCreationButtonPattern(), Configs.TEST_PLAYLIST_NAME);
 		Thread.sleep(3000);
 
-		screen.click(guiPatterns.getUserNameDropDownPattern());
-		Thread.sleep(3000);
-		screen.click(guiPatterns.getLogoutButtonPattern());
+		userSession.logOut();
 		app.close();
 
 	}
