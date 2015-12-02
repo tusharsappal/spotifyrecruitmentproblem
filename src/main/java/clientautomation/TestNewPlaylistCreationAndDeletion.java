@@ -8,6 +8,7 @@ import org.sikuli.script.ImagePath;
 import org.sikuli.script.Screen;
 
 import configs.Configs;
+import utils.RandomNameGenerator;
 import utils.RetrieveGUIObjectPatterns;
 import utils.UserSession;
 
@@ -22,6 +23,7 @@ public class TestNewPlaylistCreationAndDeletion {
 		RetrieveGUIObjectPatterns guiPatterns = new RetrieveGUIObjectPatterns();
 		App app = new App(Configs.APP_NAME);
 		UserSession userSession = new UserSession();
+		RandomNameGenerator randString = new RandomNameGenerator();
 
 		app.focus();
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
@@ -35,7 +37,7 @@ public class TestNewPlaylistCreationAndDeletion {
 		screen.mouseMove(guiPatterns.getNewPlaylistDefaultTextBoxPattern());
 		screen.click(guiPatterns.getNewPlaylistDefaultTextBoxPattern());
 		Thread.sleep(3000);
-		screen.type(guiPatterns.getNewPlayListCreationButtonPattern(), Configs.TEST_PLAYLIST_NAME);
+		screen.type(guiPatterns.getNewPlayListCreationButtonPattern(), randString.nextSessionId(20)+Configs.TEST_PLAYLIST_NAME);
 		Thread.sleep(3000);
 
 		userSession.logOut();

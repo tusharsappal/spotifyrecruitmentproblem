@@ -11,7 +11,7 @@ public class RandomNameGenerator {
 		random = new SecureRandom();
 	}
 
-	public String nextSessionId() {
-		return new BigInteger(130, random).toString(32);
+	public String nextSessionId(int numOfBits) {
+		return new BigInteger(numOfBits, random).toString(32);
 	}
 }

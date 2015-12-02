@@ -11,8 +11,7 @@ import org.sikuli.script.Screen;
 import configs.Configs;
 import junit.framework.Assert;
 import utils.RetrieveGUIObjectPatterns;
-import utils.RetrieveUpdateLoginCredentials;
-
+import utils.UserSession;
 
 public class TestPlayingTrackScenario {
 
@@ -24,11 +23,11 @@ public class TestPlayingTrackScenario {
 		ImagePath.add(System.getProperty("user.dir")+Configs.IMAGE_PATH);
 		RetrieveGUIObjectPatterns guiPatterns = new RetrieveGUIObjectPatterns();
 		App app = new App(Configs.APP_NAME);
+		UserSession userSession = new UserSession();
+
 		app.focus();
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
-		screen.click(guiPatterns.getUserNamePattern());
-		screen.type(guiPatterns.getPasswordPattern(),RetrieveUpdateLoginCredentials.getPassWord());
-		screen.click(guiPatterns.getLoginButtonPattern());
+		userSession.loginUsingValidCredentials();
 		screen.wait(guiPatterns.getSearchBoxPattern());
 		Thread.sleep(3000);
 		screen.mouseMove(guiPatterns.getGenresAndMoodsPattern());
@@ -41,20 +40,13 @@ public class TestPlayingTrackScenario {
 		screen.mouseMove(guiPatterns.getViralHitsThumbNailPattern());
 		screen.click(guiPatterns.getViralHitsThumbNailPattern());
 		Thread.sleep(3000);
-		
-		if (screen.exists(guiPatterns.getActivePlayButtonPattern())!= null)
-		{
-			Assert.assertTrue(true);
-		}
-		else
-		{
-			Assert.assertTrue(false);
-		}
-		
-		screen.click(guiPatterns.getUserNameDropDownPattern());
-		Thread.sleep(3000);
-		screen.click(guiPatterns.getLogoutButtonPattern());
 
+		if (screen.exists(guiPatterns.getActivePlayButtonPattern())!= null)
+			Assert.assertTrue(true);
+		else
+			Assert.assertTrue(false);
+
+		userSession.logOut();
 		app.close();
 	}
 

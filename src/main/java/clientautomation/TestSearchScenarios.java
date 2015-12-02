@@ -12,7 +12,7 @@ import org.sikuli.script.Screen;
 
 import configs.Configs;
 import utils.RetrieveGUIObjectPatterns;
-import utils.RetrieveUpdateLoginCredentials;
+import utils.UserSession;
 
 public class TestSearchScenarios {
 
@@ -24,11 +24,11 @@ public class TestSearchScenarios {
 		ImagePath.add(System.getProperty("user.dir")+Configs.IMAGE_PATH);
 		RetrieveGUIObjectPatterns guiPatterns = new RetrieveGUIObjectPatterns();
 		App app = new App(Configs.APP_NAME);
+		UserSession userSession = new UserSession();
+
 		app.focus();
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
-		screen.click(guiPatterns.getUserNamePattern());
-		screen.type(guiPatterns.getPasswordPattern(),RetrieveUpdateLoginCredentials.getPassWord());
-		screen.click(guiPatterns.getLoginButtonPattern());
+		userSession.loginUsingValidCredentials();
 		screen.wait(guiPatterns.getSearchBoxPattern());
 
 		if (screen.exists(guiPatterns.getSearchBoxPattern())!= null)
@@ -37,24 +37,16 @@ public class TestSearchScenarios {
 			screen.type(guiPatterns.getSearchBoxPattern(), Configs.ARTIST_SONG_NAME);
 			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 			if(screen.exists(guiPatterns.getWhenIWasYourManSongTopResultsInList())!= null)
-			{
 				Assert.assertTrue(true);
-			}
-			
 			else
-			{
 				Assert.assertTrue(false);
-			}
-			
-			// Now we will try to click on the song to play it .
-			
-			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
-			screen.click(guiPatterns.getUserNameDropDownPattern());
-			Thread.sleep(3000);
-			screen.click(guiPatterns.getLogoutButtonPattern());
-		}
 
-		System.out.println(app.isRunning());
+			// Now we will try to click on the song to play it .
+
+			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
+			userSession.logOut();
+
+		}
 		app.close();
 	}
 
