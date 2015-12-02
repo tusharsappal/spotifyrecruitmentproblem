@@ -10,6 +10,7 @@ import org.sikuli.script.Screen;
 import configs.Configs;
 import utils.RetrieveGUIObjectPatterns;
 import utils.RetrieveUpdateLoginCredentials;
+import utils.UserSession;
 
 public class TestNewPlaylistCreationAndDeletion {
 
@@ -22,11 +23,16 @@ public class TestNewPlaylistCreationAndDeletion {
 		ImagePath.add(System.getProperty("user.dir")+Configs.IMAGE_PATH);
 		RetrieveGUIObjectPatterns guiPatterns = new RetrieveGUIObjectPatterns();
 		App app = new App(Configs.APP_NAME);
+		UserSession userSession = new UserSession();
+		
 		app.focus();
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		screen.click(guiPatterns.getUserNamePattern());
-		screen.type(guiPatterns.getPasswordPattern(),RetrieveUpdateLoginCredentials.getPassWord());
-		screen.click(guiPatterns.getLoginButtonPattern());
+		userSession.loginUsingValidCredentials();
+		
+		//screen.type(guiPatterns.getPasswordPattern(),RetrieveUpdateLoginCredentials.getPassWord());
+		//screen.click(guiPatterns.getLoginButtonPattern());
+		
 		screen.wait(guiPatterns.getSearchBoxPattern());
 
 		screen.mouseMove(guiPatterns.getNewPlayListCreationButtonPattern());
