@@ -17,6 +17,14 @@ The project uses the following set of artifacts and their respective versions as
 3. `utils` package under `src/main/java` contains all the utility / helper methods which are actively used by the test scripts.
 4. `images` folder under `src/main/resources` hosts all the necessary image files required in the form of Patterns for the test cases to run
 
+### Steps to run the Test Cases
+
+As mentioned in the documentation above the different test cases are bundled into a Test Suite named `JUnitTestSuite.java` under the folder structure `src/main/java/clientautomation` . This Test Suite is called through the `TestRunner.java` file present at the same location.
+
+We can run the test cases in two manners.
+
+1. Using IDE (like Eclipse etc)
+
 ###Assumptions
 
 1. The user profile is already created .
