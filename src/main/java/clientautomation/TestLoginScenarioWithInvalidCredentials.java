@@ -28,14 +28,15 @@ public class TestLoginScenarioWithInValidCredentials {
 		screen.wait(guiPatterns.getInvalidCredentialsErrorPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 
 		if(screen.exists(guiPatterns.getInvalidCredentialsErrorPattern()) != null)
-		{
-			// We will be adding more tests here like checking for the presence of login button etc.
-			if ((screen.exists(guiPatterns.getLoginWithFacebookPattern())!= null) &&
-					(screen.exists(guiPatterns.getSignUpOptionLoginScreenPattern())!= null))
+		{			
+			if ((screen.exists(guiPatterns.getLoginWithFacebookPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!= null) &&
+					(screen.exists(guiPatterns.getSignUpOptionLoginScreenPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!= null) &&
+					(screen.exists(guiPatterns.getLoginButtonPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!= null))
 				Assert.assertTrue(true);
+			// If all the required elements are present on the screen , we will be passing the test case
 			else
 				Assert.assertTrue(false);
-			// Need to improve some portions of the test script
+			// If any of the element is missing from the screen we would fail the test case
 		}
 
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
