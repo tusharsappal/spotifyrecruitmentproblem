@@ -2,7 +2,6 @@ package clientautomation;
 
 import org.sikuli.script.*;
 import java.awt.AWTException;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.sikuli.basics.Debug;
@@ -14,7 +13,8 @@ public class TestLoginScenarioWithInValidCredentials {
 
 	@Test
 	public void testLoginScenarioWithInvalidCredentials() throws FindFailed, InterruptedException, AWTException {
-
+		// This test script checks that the user is not allowed to enter the Spotify Client app using the false / invalid credentials
+		
 		Debug.setDebugLevel(Configs.DEBUG_LEVEL);
 		Screen screen = new Screen();			
 		ImagePath.add(System.getProperty("user.dir")+Configs.IMAGE_PATH);

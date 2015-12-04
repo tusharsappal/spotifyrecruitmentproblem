@@ -5,9 +5,7 @@ import java.awt.AWTException;
 import org.sikuli.basics.Debug;
 import configs.Configs;
 import utils.RetrieveGUIObjectPatterns;
-import utils.RetrieveUpdateLoginCredentials;
 import utils.UserSession;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,6 +13,7 @@ public class TestLoginScenarioWithValidCredentials {
 
 	@Test
 	public void testLoginScenarioWithValidCredentials() throws FindFailed, InterruptedException, AWTException {
+		// This test script checks that the user is allowed to enter the Spotify Client application using the correct credentials
 
 		Debug.setDebugLevel(Configs.DEBUG_LEVEL);
 		Screen screen = new Screen();			
@@ -28,8 +27,11 @@ public class TestLoginScenarioWithValidCredentials {
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		userSession.loginUsingValidCredentials();
 		screen.wait(guiPatterns.getUserNameTopBannerPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
+		// If the user name top banner and the search box is present , 
+		//we are sure that the user is logged in and we will be marking the test case as pass.
 
-		if(screen.exists(guiPatterns.getUserNameTopBannerPattern()) != null)
+		if((screen.exists(guiPatterns.getUserNameTopBannerPattern()) != null) &&
+				(screen.exists(guiPatterns.getSearchBoxPattern())!= null))
 		{
 			isUserLoggedIn = true;
 			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
@@ -41,7 +43,7 @@ public class TestLoginScenarioWithValidCredentials {
 			Assert.assertTrue(true);
 		else
 			Assert.assertTrue(false);
-
+		
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		app.close();
 	}
