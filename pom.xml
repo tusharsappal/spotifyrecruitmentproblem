@@ -12,14 +12,14 @@
 		</repository>
 	</repositories>
 	<developers>
-		<developer>
-			<name>
+	<developer>
+	<name>
 	Tushar Sappal
 	</name>
-			<email>
+	<email>
 	sappal.tushar@gmail.com
 	</email>
-		</developer>
+	</developer>
 	</developers>
 
 	<dependencies>
