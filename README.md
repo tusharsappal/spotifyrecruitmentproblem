@@ -12,10 +12,12 @@ The project uses the following set of artifacts and their respective versions as
 
 ### Directory Structure of the Project
 
-1. `clientautomation` package under `src/main/java`contains all the test scripts along with the JUnit Test Runner and JUnit Test suites.
-2. `configs` package under `src/main/java` contains all the configuration files for the project.
-3. `utils` package under `src/main/java` contains all the utility / helper methods which are actively used by the test scripts.
-4. `images` folder under `src/main/resources` hosts all the necessary image files required in the form of Patterns for the test cases to run
+All the test cases and the necessary utilities and resource files are present under the `test` package.
+
+1. `clientautomation` package under `src/test/java`contains all the test scripts along with the JUnit Test Runner and JUnit Test suites.
+2. `configs` package under `src/test/java` contains all the configuration files for the project.
+3. `utils` package under `src/test/java` contains all the utility / helper methods which are actively used by the test scripts.
+4. `images` folder under `src/test/resources` hosts all the necessary image files required in the form of Patterns for the test cases to run
 
 ### Steps to run the Test Cases
 
@@ -25,7 +27,7 @@ We can run the test cases in two manners.
 
 1. Using IDE (like Eclipse etc) we can right click on the Test Runner file like JUnitTestSuite.java or TestRunner.java that will be running all of the test scripts. To run individual scripts just right click on the Test Script and run it as JUnit Test Case.
 
-2. Through Command line using the Maven Build Ecosystem , since the project is Apache Maven based 
+2. Through Command line using the Maven Build Ecosystem , since the project is Apache Maven based we can run all the test cases using the single command `mvn test` or `mvn clean install` . It basically fires up all the test cases listed under the `src/test/java` folder.
 
 ###Assumptions
 
