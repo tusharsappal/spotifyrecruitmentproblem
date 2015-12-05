@@ -41,7 +41,7 @@ public class TestNewPlaylistCreation {
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		screen.type(Key.ENTER);
 		// Now we will be checking if the playlist is present on the screen or not
-		
+
 		if (screen.exists(guiPatterns.getTestPlayListPattern(),Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!=null)
 		{
 			Assert.assertTrue(true);
@@ -51,7 +51,13 @@ public class TestNewPlaylistCreation {
 			Assert.assertTrue(false);
 		}
 
-		
+		// We will now try to delete the newly created playlist
+
+		screen.rightClick(guiPatterns.getTestPlayListPattern());
+		screen.wait(guiPatterns.getPlayListRightClickOptionPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
+		screen.click(guiPatterns.getDeletePlayListOptionPattern());
+
+		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 
 		userSession.logOut();
 		app.close();

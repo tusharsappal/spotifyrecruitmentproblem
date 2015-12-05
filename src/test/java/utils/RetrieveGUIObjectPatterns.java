@@ -27,6 +27,8 @@ public class RetrieveGUIObjectPatterns {
 	private Pattern newPlayListCreationPattern = new Pattern("new_playlist_creation_button.png").similar((float)0.7);
 	private Pattern newPlayListDefaultTextBoxPattern = new Pattern("new_playlist_default_textbox.png").similar((float)0.7);
 	private Pattern testPlayListPattern = new Pattern("new_test_playlist.png").similar((float)0.7);
+	private Pattern playListRightClickOptionPattern = new Pattern("play_list_right_click_options.png").similar((float)0.7);
+	private Pattern deletePlayListOptionPattern  = new Pattern("play_list_delete_option.png").similar((float)0.7);
 
 	public Pattern getUserNamePattern()
 	{
@@ -137,10 +139,19 @@ public class RetrieveGUIObjectPatterns {
 	{
 		return newPlayListDefaultTextBoxPattern;
 	}
-	
+
 	public Pattern getTestPlayListPattern()
 	{
 		return testPlayListPattern;
 	}
 
+	public Pattern getPlayListRightClickOptionPattern()
+	{
+		return playListRightClickOptionPattern;
+	}
+
+	public Pattern getDeletePlayListOptionPattern()
+	{
+		return deletePlayListOptionPattern;
+	}
 }
