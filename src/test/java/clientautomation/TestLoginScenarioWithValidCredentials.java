@@ -30,11 +30,10 @@ public class TestLoginScenarioWithValidCredentials {
 		// If the user name top banner and the search box is present , 
 		//we are sure that the user is logged in and we will be marking the test case as pass.
 
-		if((screen.exists(guiPatterns.getUserNameTopBannerPattern()) != null) &&
-				(screen.exists(guiPatterns.getSearchBoxPattern())!= null))
+		if((screen.exists(guiPatterns.getUserNameTopBannerPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC) != null) &&
+				(screen.exists(guiPatterns.getSearchBoxPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!= null))
 		{
 			isUserLoggedIn = true;
-			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 			userSession.logOut();
 			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		}
@@ -43,7 +42,7 @@ public class TestLoginScenarioWithValidCredentials {
 			Assert.assertTrue(true);
 		else
 			Assert.assertTrue(false);
-		
+
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		app.close();
 	}

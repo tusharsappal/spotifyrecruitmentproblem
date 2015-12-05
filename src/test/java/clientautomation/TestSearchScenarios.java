@@ -34,8 +34,10 @@ public class TestSearchScenarios {
 		{
 			screen.click(guiPatterns.getSearchBoxPattern());
 			screen.type(guiPatterns.getSearchBoxPattern(), Configs.ARTIST_SONG_NAME);
-			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
-			if(screen.exists(guiPatterns.getWhenIWasYourManSongTopResultsInList())!= null)
+			// Lets wait till the search result gets displayed in the list
+			screen.wait(guiPatterns.getWhenIWasYourManSongTopResultsInList(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
+			//Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
+			if(screen.exists(guiPatterns.getWhenIWasYourManSongTopResultsInList(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!= null)
 				isArtistListed = true;
 			else
 				isArtistListed = false;
