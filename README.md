@@ -35,9 +35,10 @@ I can run the test cases in two manners.
 2. Spotify should be running and streaming data in the country in which the test cases are to be run.
 3. The User Name field has the value populated already , I will not be touching that instead will be filling up the password field to login.
 4. The Sikuli and the JUnit dependencies are already built into the system on which the test scripts are to be run.
-5. The test case assumes that the login , Desktop client , Spotify's back-end functionalities to work at the time when the test case runs.
-6. I assume that UI Rendering and Opening of tabs , logging in etc takes around 3 seconds at max and I have defined that value as the deafult waiting time in the Configs.
-7. I have written a single test case around the workflow , like for the login workflow using the valid Credentials there can be many test cases like checking for the upper limit of the user name , password and with what all different characters one can use to form the password.
+5. Maven Home and correct Java Version (java 1.7+) is installed and correctly configured.
+6. The test case assumes that the login , Desktop client , Spotify's back-end functionalities to work at the time when the test case runs.
+7. I assume that UI Rendering and Opening of tabs , logging in etc takes around 3 seconds at max and I have defined that value as the deafult waiting time in the Configs.
+8. I have written a single test case around the workflow , like for the login workflow using the valid Credentials there can be many test cases like checking for the upper limit of the user name , password and with what all different characters one can use to form the password.
 
 
 ### Special Test Case that was Automated

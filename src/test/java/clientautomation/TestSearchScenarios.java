@@ -1,7 +1,6 @@
 package clientautomation;
 
 import java.awt.AWTException;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.sikuli.basics.Debug;
@@ -44,7 +43,6 @@ public class TestSearchScenarios {
 
 			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 			userSession.logOut();
-
 		}
 		app.close();
 	}
