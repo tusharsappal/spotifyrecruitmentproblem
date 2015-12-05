@@ -45,7 +45,6 @@ public class TestLoginScenarioWithInValidCredentials {
 		catch(Exception e)
 		{
 			System.out.println(e.getStackTrace());
-			userSession.logOut();
 			app.close();
 		}
 
