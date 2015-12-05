@@ -24,20 +24,29 @@ public class TestLoginScenarioWithInValidCredentials {
 		boolean isUserLoggedin = false; // We will keep that false , to denote that user with invalid credentials is not able to log in 
 
 		app.focus();
-		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
-		userSession.enterInValidCredentials();
-		screen.wait(guiPatterns.getInvalidCredentialsErrorPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
+		try
+		{
+			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
+			userSession.enterInValidCredentials();
+			screen.wait(guiPatterns.getInvalidCredentialsErrorPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 
-		if(screen.exists(guiPatterns.getInvalidCredentialsErrorPattern()) != null)
-		{			
-			if ((screen.exists(guiPatterns.getLoginWithFacebookPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!= null) &&
-					(screen.exists(guiPatterns.getSignUpOptionLoginScreenPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!= null) &&
-					(screen.exists(guiPatterns.getLoginButtonPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!= null))
-				isUserLoggedin = false;
-			// If all the required elements are present on the screen , we will be passing the test case, we will keep tha flag as false to suggest that user is not logged in
-			else
-				isUserLoggedin = true;
-			// This would mean that the user is logged in by some means and we would fail the test case around this
+			if(screen.exists(guiPatterns.getInvalidCredentialsErrorPattern()) != null)
+			{			
+				if ((screen.exists(guiPatterns.getLoginWithFacebookPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!= null) &&
+						(screen.exists(guiPatterns.getSignUpOptionLoginScreenPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!= null) &&
+						(screen.exists(guiPatterns.getLoginButtonPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!= null))
+					isUserLoggedin = false;
+				// If all the required elements are present on the screen , we will be passing the test case, we will keep tha flag as false to suggest that user is not logged in
+				else
+					isUserLoggedin = true;
+				// This would mean that the user is logged in by some means and we would fail the test case around this
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getStackTrace());
+			userSession.logOut();
+			app.close();
 		}
 
 		if (isUserLoggedin == false)
