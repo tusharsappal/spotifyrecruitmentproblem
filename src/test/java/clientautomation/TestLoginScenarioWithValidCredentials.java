@@ -24,27 +24,35 @@ public class TestLoginScenarioWithValidCredentials {
 		App app = new App(Configs.APP_NAME);
 		app.focus();
 
-		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
-		userSession.loginUsingValidCredentials();
-		screen.wait(guiPatterns.getUserNameTopBannerPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
-		// If the user name top banner and the search box is present , 
-		//we are sure that the user is logged in and we will be marking the test case as pass.
-
-		if((screen.exists(guiPatterns.getUserNameTopBannerPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC) != null) &&
-				(screen.exists(guiPatterns.getSearchBoxPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!= null))
+		try
 		{
-			isUserLoggedIn = true;
-			userSession.logOut();
+
 			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
+			userSession.loginUsingValidCredentials();
+			screen.wait(guiPatterns.getUserNameTopBannerPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
+			// If the user name top banner and the search box is present , 
+			//we are sure that the user is logged in and we will be marking the test case as pass.
+
+			if((screen.exists(guiPatterns.getUserNameTopBannerPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC) != null) &&
+					(screen.exists(guiPatterns.getSearchBoxPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!= null))
+			{
+				isUserLoggedIn = true;		
+				Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
+			}
+
+			if (isUserLoggedIn == true)
+				Assert.assertTrue(true);
+			else
+				Assert.assertTrue(false);
 		}
 
-		if (isUserLoggedIn == true)
-			Assert.assertTrue(true);
-		else
-			Assert.assertTrue(false);
-
-		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
+		catch (Exception e)
+		{
+			System.out.println(e.getStackTrace());		
+		}
+		userSession.logOut();
 		app.close();
+
 	}
 
 }

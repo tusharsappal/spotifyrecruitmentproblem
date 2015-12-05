@@ -41,17 +41,16 @@ public class TestLoginScenarioWithInValidCredentials {
 					isUserLoggedin = true;
 				// This would mean that the user is logged in by some means and we would fail the test case around this
 			}
+
+			if (isUserLoggedin == false)
+				Assert.assertTrue(true); // User is not able to login and we will state that the test case has passed
+			else
+				Assert.assertTrue(false);  // We will be failing the test case 
 		}
 		catch(Exception e)
 		{
 			System.out.println(e.getStackTrace());
-			app.close();
 		}
-
-		if (isUserLoggedin == false)
-			Assert.assertTrue(true); // User is not able to login and we will state that the test case has passed
-		else
-			Assert.assertTrue(false);  // We will be failing the test case 
 
 		app.close();
 	}
