@@ -16,7 +16,7 @@ import utils.UserSession;
 public class TestNewPlaylistCreationDeletion {
 
 	@Test
-	public void testNewPlayListCreation() throws InterruptedException, FindFailed
+	public void testNewPlayListCreationDeltion() throws InterruptedException, FindFailed
 	{
 		Debug.setDebugLevel(Configs.DEBUG_LEVEL);
 		Screen screen = new Screen();			
@@ -25,10 +25,11 @@ public class TestNewPlaylistCreationDeletion {
 		App app = new App(Configs.APP_NAME);
 		UserSession userSession = new UserSession();
 		PlayListNameGenerator playListName = new PlayListNameGenerator();
+		boolean isPlaylistCreated = false; // Keeping the flag values as false
+		boolean isPlayListDeleted = false; 
 
 		app.focus();
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
-		//screen.click(guiPatterns.getUserNamePattern());
 		userSession.loginUsingValidCredentials();
 		screen.wait(guiPatterns.getSearchBoxPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		screen.mouseMove(guiPatterns.getNewPlayListCreationButtonPattern());
@@ -43,25 +44,31 @@ public class TestNewPlaylistCreationDeletion {
 		// Now we will be checking if the playlist is present on the screen or not
 
 		if (screen.exists(guiPatterns.getTestPlayListPattern(),Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!=null)
-		{
-			Assert.assertTrue(true);
-		}
+			isPlaylistCreated = true;
 		else
-		{
-			Assert.assertTrue(false);
-		}
+			isPlaylistCreated = false;
 
 		// We will now try to delete the newly created playlist
-
 		screen.rightClick(guiPatterns.getTestPlayListPattern());
 		screen.wait(guiPatterns.getPlayListRightClickOptionPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		screen.click(guiPatterns.getDeletePlayListOptionPattern());
-
+		// Lets wait for a couple of seconds , and then check for the dismissal of the new playlist from the screen
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 
+		if (screen.exists(guiPatterns.getTestPlayListPattern())!=null)
+			isPlayListDeleted = false;
+		else
+			isPlayListDeleted = true;
+
+		if (isPlaylistCreated == true && isPlayListDeleted ==true)
+			Assert.assertTrue(true);
+		// If both the conditions are met we will be marking the test case as pass
+		else
+			Assert.assertTrue(false);
+		// Else we will be failing the test case
+		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		userSession.logOut();
 		app.close();
-
 	}
 
 }
