@@ -26,7 +26,7 @@ public class RetrieveGUIObjectPatterns {
 	private Pattern viralSongsThumbNailPattern = new Pattern("viral_hits_thumbnail_image.png").similar((float)0.7);
 	private Pattern newPlayListCreationPattern = new Pattern("new_playlist_creation_button.png").similar((float)0.7);
 	private Pattern newPlayListDefaultTextBoxPattern = new Pattern("new_playlist_default_textbox.png").similar((float)0.7);
-	private Pattern testPlayListPattern = new Pattern("test_playlist.png").similar((float)0.7);
+	private Pattern testPlayListPattern = new Pattern("new_test_playlist.png").similar((float)0.7);
 
 	public Pattern getUserNamePattern()
 	{
