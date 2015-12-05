@@ -5,8 +5,10 @@ import org.sikuli.basics.Debug;
 import org.sikuli.script.App;
 import org.sikuli.script.FindFailed;
 import org.sikuli.script.ImagePath;
+import org.sikuli.script.Key;
 import org.sikuli.script.Screen;
 import configs.Configs;
+import junit.framework.Assert;
 import utils.PlayListNameGenerator;
 import utils.RetrieveGUIObjectPatterns;
 import utils.UserSession;
@@ -14,7 +16,7 @@ import utils.UserSession;
 public class TestNewPlaylistCreation {
 
 	@Test
-	public void testNewPlayListCreationDeletion() throws InterruptedException, FindFailed
+	public void testNewPlayListCreation() throws InterruptedException, FindFailed
 	{
 		Debug.setDebugLevel(Configs.DEBUG_LEVEL);
 		Screen screen = new Screen();			
@@ -37,9 +39,20 @@ public class TestNewPlaylistCreation {
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		screen.type(guiPatterns.getNewPlayListCreationButtonPattern(), playListName.generateName());
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
-		
+		screen.type(Key.ENTER);
 		// Now we will be checking if the playlist is present on the screen or not
 		
+		if (screen.exists(guiPatterns.getTestPlayListPattern(),Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!=null)
+		{
+			Assert.assertTrue(true);
+		}
+		else
+		{
+			Assert.assertTrue(false);
+		}
+
+		
+
 		userSession.logOut();
 		app.close();
 

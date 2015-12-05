@@ -19,13 +19,14 @@ public class RetrieveGUIObjectPatterns {
 	private Pattern searchBoxPattern = new Pattern("search_box.png").similar((float)0.7);
 	private Pattern artistLevelPlayButtonPattern = new Pattern("artist_play_button.png").similar((float)0.7);
 	private Pattern activePlayButtonPattern = new Pattern("active_play_button.png").similar((float)0.7);
-	private Pattern activePauseButton = new Pattern("active_pause_button.png").similar((float)0.7);
-	private Pattern whenIWasYourManTopResultsInList = new Pattern("when_i_was_your_man_top_results_in_list.png").similar((float)0.7);
+	private Pattern activePauseButtonPattern = new Pattern("active_pause_button.png").similar((float)0.7);
+	private Pattern whenIWasYourManTopResultsInListPattern = new Pattern("when_i_was_your_man_top_results_in_list.png").similar((float)0.7);
 	private Pattern getGenresAndMoodsPattern = new Pattern("genres_and_mood.png").similar((float)0.7);
 	private Pattern trendingSongsThumbNailPattern = new Pattern("trending_songs_thumbnail_image.png").similar((float)0.7);
 	private Pattern viralSongsThumbNailPattern = new Pattern("viral_hits_thumbnail_image.png").similar((float)0.7);
 	private Pattern newPlayListCreationPattern = new Pattern("new_playlist_creation_button.png").similar((float)0.7);
-	private Pattern newPlayListDefaultTextBox = new Pattern("new_playlist_default_textbox.png").similar((float)0.7);
+	private Pattern newPlayListDefaultTextBoxPattern = new Pattern("new_playlist_default_textbox.png").similar((float)0.7);
+	private Pattern testPlayListPattern = new Pattern("test_playlist.png").similar((float)0.7);
 
 	public Pattern getUserNamePattern()
 	{
@@ -99,7 +100,7 @@ public class RetrieveGUIObjectPatterns {
 
 	public Pattern getArtistLevelPauseButtonPattern()
 	{
-		return activePauseButton;
+		return activePauseButtonPattern;
 	}
 
 	public Pattern getActivePlayButtonPattern()
@@ -109,7 +110,7 @@ public class RetrieveGUIObjectPatterns {
 
 	public Pattern getWhenIWasYourManSongTopResultsInList()
 	{
-		return whenIWasYourManTopResultsInList;
+		return whenIWasYourManTopResultsInListPattern;
 	}
 
 	public Pattern getGenresAndMoodsPattern()
@@ -134,7 +135,12 @@ public class RetrieveGUIObjectPatterns {
 
 	public Pattern getNewPlaylistDefaultTextBoxPattern()
 	{
-		return newPlayListDefaultTextBox;
+		return newPlayListDefaultTextBoxPattern;
+	}
+	
+	public Pattern getTestPlayListPattern()
+	{
+		return testPlayListPattern;
 	}
 
 }
