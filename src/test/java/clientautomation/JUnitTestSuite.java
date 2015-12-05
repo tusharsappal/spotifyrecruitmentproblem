@@ -8,7 +8,8 @@ import org.junit.runners.Suite;
 	TestLoginScenarioWithInValidCredentials.class,
 	TestLoginScenarioWithValidCredentials.class,
 	TestSearchScenarios.class,
-	TestPlayingTrackScenario.class
+	TestPlayingTrackScenario.class,
+	TestNewPlaylistCreation.class
 })
 
 public class JUnitTestSuite {

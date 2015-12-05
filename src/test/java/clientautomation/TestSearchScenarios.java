@@ -23,6 +23,7 @@ public class TestSearchScenarios {
 		RetrieveGUIObjectPatterns guiPatterns = new RetrieveGUIObjectPatterns();
 		App app = new App(Configs.APP_NAME);
 		UserSession userSession = new UserSession();
+		boolean isArtistListed = false;
 
 		app.focus();
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
@@ -35,15 +36,21 @@ public class TestSearchScenarios {
 			screen.type(guiPatterns.getSearchBoxPattern(), Configs.ARTIST_SONG_NAME);
 			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 			if(screen.exists(guiPatterns.getWhenIWasYourManSongTopResultsInList())!= null)
-				Assert.assertTrue(true);
+				isArtistListed = true;
 			else
-				Assert.assertTrue(false);
+				isArtistListed = false;
 
 			// Now we will try to click on the song to play it .
 
 			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 			userSession.logOut();
 		}
+
+		if (isArtistListed == true)
+			Assert.assertTrue(true);
+		else
+			Assert.assertTrue(false);
+
 		app.close();
 	}
 
