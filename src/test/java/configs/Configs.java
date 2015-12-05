@@ -2,7 +2,7 @@ package configs;
 
 public class Configs {
 
-	public static final String IMAGE_PATH = "/src/test/resources/images";
+	public static final String IMAGE_PATH = "/src/test/resources/imageResources";
 	public static final String APP_NAME = "Spotify";
 	public static final int DEFAULT_WAIT_TIME_IN_MILLISEC = 3000;
 	public static final int DEBUG_LEVEL = 3;
