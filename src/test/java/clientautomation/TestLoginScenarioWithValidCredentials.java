@@ -23,11 +23,9 @@ public class TestLoginScenarioWithValidCredentials {
 		boolean isUserLoggedIn = false;
 		App app = new App(Configs.APP_NAME);
 		app.focus();
-
+		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		try
 		{
-
-			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 			userSession.loginUsingValidCredentials();
 			screen.wait(guiPatterns.getUserNameTopBannerPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 			// If the user name top banner and the search box is present , 
@@ -52,7 +50,6 @@ public class TestLoginScenarioWithValidCredentials {
 		}
 		userSession.logOut();
 		app.close();
-
 	}
 
 }

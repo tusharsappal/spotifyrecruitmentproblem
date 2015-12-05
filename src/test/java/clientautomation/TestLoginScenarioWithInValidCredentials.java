@@ -24,9 +24,9 @@ public class TestLoginScenarioWithInValidCredentials {
 		boolean isUserLoggedin = false; // We will keep that false , to denote that user with invalid credentials is not able to log in 
 
 		app.focus();
+		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		try
 		{
-			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 			userSession.enterInValidCredentials();
 			screen.wait(guiPatterns.getInvalidCredentialsErrorPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 
