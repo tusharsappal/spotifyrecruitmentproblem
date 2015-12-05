@@ -6,13 +6,12 @@ import org.sikuli.script.App;
 import org.sikuli.script.FindFailed;
 import org.sikuli.script.ImagePath;
 import org.sikuli.script.Screen;
-
 import configs.Configs;
 import utils.RandomNameGenerator;
 import utils.RetrieveGUIObjectPatterns;
 import utils.UserSession;
 
-public class TestNewPlaylistCreationAndDeletion {
+public class TestNewPlaylistCreation {
 
 	@Test
 	public void testNewPlayListCreationDeletion() throws InterruptedException, FindFailed

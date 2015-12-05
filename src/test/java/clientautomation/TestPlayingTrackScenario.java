@@ -7,7 +7,6 @@ import org.sikuli.script.App;
 import org.sikuli.script.FindFailed;
 import org.sikuli.script.ImagePath;
 import org.sikuli.script.Screen;
-
 import configs.Configs;
 import junit.framework.Assert;
 import utils.RetrieveGUIObjectPatterns;
@@ -29,17 +28,17 @@ public class TestPlayingTrackScenario {
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		userSession.loginUsingValidCredentials();
 		screen.wait(guiPatterns.getSearchBoxPattern());
-		Thread.sleep(3000);
+		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		screen.mouseMove(guiPatterns.getGenresAndMoodsPattern());
 		screen.click(guiPatterns.getGenresAndMoodsPattern());
-		Thread.sleep(3000);
+		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		screen.mouseMove(guiPatterns.getTrendingSongsThumbNailPattern());
 		screen.click(guiPatterns.getTrendingSongsThumbNailPattern());
-		Thread.sleep(3000);
+		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 
 		screen.mouseMove(guiPatterns.getViralHitsThumbNailPattern());
 		screen.click(guiPatterns.getViralHitsThumbNailPattern());
-		Thread.sleep(3000);
+		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 
 		if (screen.exists(guiPatterns.getActivePlayButtonPattern())!= null)
 			Assert.assertTrue(true);
