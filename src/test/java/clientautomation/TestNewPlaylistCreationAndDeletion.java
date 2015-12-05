@@ -30,15 +30,14 @@ public class TestNewPlaylistCreationAndDeletion {
 		screen.click(guiPatterns.getUserNamePattern());
 		userSession.loginUsingValidCredentials();
 		screen.wait(guiPatterns.getSearchBoxPattern());
-
 		screen.mouseMove(guiPatterns.getNewPlayListCreationButtonPattern());
 		screen.click(guiPatterns.getNewPlayListCreationButtonPattern());
-		Thread.sleep(3000);
+		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		screen.mouseMove(guiPatterns.getNewPlaylistDefaultTextBoxPattern());
 		screen.click(guiPatterns.getNewPlaylistDefaultTextBoxPattern());
-		Thread.sleep(3000);
+		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 		screen.type(guiPatterns.getNewPlayListCreationButtonPattern(), randString.nextSessionId(20)+Configs.TEST_PLAYLIST_NAME);
-		Thread.sleep(3000);
+		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
 
 		userSession.logOut();
 		app.close();

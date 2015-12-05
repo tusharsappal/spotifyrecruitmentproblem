@@ -23,7 +23,9 @@ As mentioned in the documentation above the different test cases are bundled int
 
 We can run the test cases in two manners.
 
-1. Using IDE (like Eclipse etc)
+1. Using IDE (like Eclipse etc) we can right click on the Test Runner file like JUnitTestSuite.java or TestRunner.java that will be running all of the test scripts. To run individual scripts just right click on the Test Script and run it as JUnit Test Case.
+
+2. Through Command line using the Maven Build Ecosystem , since the project is Apache Maven based 
 
 ###Assumptions
 
@@ -32,7 +34,7 @@ We can run the test cases in two manners.
 3. The User Name field has the value populated already , we will not be touching that instead will be filling up the password field to login.
 4. The Sikuli and the JUnit dependencies are already built into the system on which the test scripts are to be run.
 5. The test case assumes that the login , Desktop client , Spotify's back-end functionalities to work at the time when the test case runs.
-6. 
+6. We assume that UI Rendering and Opening of tabs , logging in etc takes around 3 seconds at max and we have defined that value as the deafult waiting time in the Configs.
 
 ### Project Author
 
