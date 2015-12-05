@@ -37,6 +37,8 @@ I can run the test cases in two manners.
 4. The Sikuli and the JUnit dependencies are already built into the system on which the test scripts are to be run.
 5. The test case assumes that the login , Desktop client , Spotify's back-end functionalities to work at the time when the test case runs.
 6. I assume that UI Rendering and Opening of tabs , logging in etc takes around 3 seconds at max and I have defined that value as the deafult waiting time in the Configs.
+7. I have written a single test case around the workflow , like for the login workflow using the valid Credentials there can be many test cases like checking for the upper limit of the user name , password and with what all different characters one can use to form the password.
+
 
 ### Special Test Case that was Automated
 I added a special Test case around __New Play List Creation__ in the test script `TestNewPlayListCreation.java`. Since Spotify is a music sreaming app and it out of bo support different compilation of songs , the user is actively involved in creating his / her own mix /collection of songs bundled in the form of playlist for different occasions like a user can create a playlist for running / gym or he / she can create one for office work.
