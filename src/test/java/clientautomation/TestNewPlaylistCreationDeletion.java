@@ -13,7 +13,7 @@ import utils.PlayListNameGenerator;
 import utils.RetrieveGUIObjectPatterns;
 import utils.UserSession;
 
-public class TestNewPlaylistCreation {
+public class TestNewPlaylistCreationDeletion {
 
 	@Test
 	public void testNewPlayListCreation() throws InterruptedException, FindFailed

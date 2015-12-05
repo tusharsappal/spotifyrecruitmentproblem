@@ -42,9 +42,9 @@ I can run the test cases in two manners.
 
 
 ### Special Test Case that was Automated
-I added a special Test case around __New Play List Creation__ in the test script `TestNewPlayListCreation.java`. Since Spotify is a music sreaming app and it out of bo support different compilation of songs , the user is actively involved in creating his / her own mix /collection of songs bundled in the form of playlist for different occasions like a user can create a playlist for running / gym or he / she can create one for office work.
+I added a special Test case around __New Play List Creation and Deletion __ in the test script `TestNewPlaylistCreationDeletion.java`. Since Spotify is a music sreaming app and it out of box supports different compilation of songs , the user is actively involved in creating his / her own mix /collection of songs bundled in the form of playlist for different occasions like a user can create a playlist for running / gym or he / she can create one for office work.
 
-Since this feature is very actively used , I chose this workflow to automate.
+Since this feature is very actively used , I chose this workflow to automate.Since if the user is actively engaged in creating the playlist , he /she will at some point of time will be deleting that playlist so the test case addresses both creation and deletion of the playlist.
  
 ### Project Author
 
