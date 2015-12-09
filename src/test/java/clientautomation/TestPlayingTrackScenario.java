@@ -43,11 +43,11 @@ public class TestPlayingTrackScenario {
 
 		// Checking if the search box and the Active PlayButton is present , in this manner we will ensure that the 
 		// user is logged in and actively playing the track
-		if (screen.exists(guiPatterns.getActivePlayButtonPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!= null 
+		  if (screen.exists(guiPatterns.getActivePlayButtonPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!= null 
 				&& (screen.exists(guiPatterns.getSearchBoxPattern(), Configs.DEFAULT_WAIT_TIME_IN_MILLISEC)!=null))
-			Assert.assertTrue(true);
-		else
-			Assert.assertTrue(false);
+			  Assert.assertTrue(true);
+		  else
+			  Assert.assertTrue(false);
 	    }
 
 	    catch (Exception e)
