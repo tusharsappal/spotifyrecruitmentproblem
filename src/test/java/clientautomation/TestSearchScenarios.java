@@ -27,6 +27,9 @@ public class TestSearchScenarios {
 
 		app.focus();
 		Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
+
+		try
+		{
 		userSession.loginUsingValidCredentials();
 		screen.wait(guiPatterns.getSearchBoxPattern());
 
@@ -45,14 +48,21 @@ public class TestSearchScenarios {
 			// Now we will try to click on the song to play it .
 
 			Thread.sleep(Configs.DEFAULT_WAIT_TIME_IN_MILLISEC);
-			userSession.logOut();
+			
 		}
 
 		if (isArtistListed == true)
 			Assert.assertTrue(true);
 		else
 			Assert.assertTrue(false);
+	    }
 
+	    catch (Exception e)
+	    {
+	    	System.out.println(e.getStackTrace());
+	    }
+
+        userSession.logOut();
 		app.close();
 	}
 
